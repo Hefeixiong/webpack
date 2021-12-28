@@ -15,12 +15,12 @@ module.exports = {
         title : 'My html' ,
         template: './src/assets/index.html'
     })],
-    // module : {
-    //     rules : [
-    //         {
-    //             test : /\.css$/i,
-    //             use : ['style-loader' , 'css-loader'],
-    //         },
-    //     ],
-    // },
+    module : {
+        rules : [
+            {
+                test : /\.css$/i,
+                use : ['style-loader' , 'css-loader'],
+            },
+        ],
+    },
 };  

@@ -1,3 +1,2 @@
-// import './x.css'
-const xxx = 'i am xxx'
+import './xxx.css'
 export default 'xxx'
