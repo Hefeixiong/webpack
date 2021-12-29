@@ -27,17 +27,32 @@ module.exports = {
     module : {
         rules : [
             {
-                test : /\.css$/i,
+                test: /\.s[ac]ss$/i,
                 use: [
-                        {
-                            loader: MiniCssExtractPlugin.loader,
-                            options: {
-                                publicPath: '../',
-                                hmr: process.env.NODE_ENV === 'development'
-                            },
-                        }, 
+                    //将JS字符串生成为style节点
+                    'style-loader',
+                    //将css转化为Common JS模块
                     'css-loader',
-                 ]
+                    //将sass编译成css
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            //dart-sass是首选
+                            implementation: require('dart-sass')
+                        }
+                    },
+                ]
+                // test : /\.css$/i,
+                // use: [
+                //         {
+                //             loader: MiniCssExtractPlugin.loader,
+                //             options: {
+                //                 publicPath: '../',
+                //                 hmr: process.env.NODE_ENV === 'development'
+                //             },
+                //         }, 
+                //     'css-loader',
+                //  ]
                 // use : ['style-loader' , 'css-loader'],
             },
         ],
